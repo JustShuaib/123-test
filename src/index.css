@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500&family=Bai+Jamjuree:wght@400;500;600&family=Poppins&family=Inter&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    font-family: "Mulish", sans-serif;
+    @apply bg-main-bg md:text-sm;
+  }
+}
+.custom-dot-list-style li button{
+  @apply bg-black border-none w-2.5 h-2.5;
+}
+.custom-dot-list-style li.react-multi-carousel-dot--active button {
+  @apply bg-primary;
+}
