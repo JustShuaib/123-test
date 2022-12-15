@@ -11,6 +11,8 @@ module.exports = {
         "btn-sec": "#FAEFD7",
         "box-bg": "#C4C4C4",
         ltext: "#444444",
+        "light-red": "#EEE4D7",
+        "light-text": "#3B3D3B",
       },
       fontFamily: {
         mulish: ["Mulish", "sans-serif"],
@@ -22,6 +24,8 @@ module.exports = {
         16: "16px",
         20: "20px",
         25: "25px",
+        36: "36px",
+        128: "128px",
       },
       boxShadow: {
         input: "0px 30px 30px rgba(131, 9, 0, 0.05)",

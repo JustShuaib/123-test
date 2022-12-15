@@ -8,10 +8,11 @@ import { ReactComponent as Right } from "../assets/right.svg";
 import slide1 from "../assets/mec.png";
 import slide2 from "../assets/slide2.png";
 import slide3 from "../assets/slide3.png";
+import half1 from "../assets/half1.png";
+import half2 from "../assets/half2.png";
 import slide1Small from "../assets/round1.png";
 import slide2Small from "../assets/round2.png";
 import slide3Small from "../assets/round3.png";
-import Button from "./Button";
 
 const responsive = {
   desktop: {
@@ -74,8 +75,11 @@ const SecondSlider = () => {
                 </span>
 
                 <div className="bg-white absolute bottom-4 p-5 w-11/12 left-1/2 -translate-x-1/2 rounded-25">
-                  <div className="absolute -top-10 right-6 p-2 bg-transparent z-10 rounded-full">
-                    <img src={smImg} className="rounded-full" />
+                  <div
+                    // style={{ clipPath: "circle(80%)" }}
+                    className="absolute -top-10 right-6 p-2 z-10 rounded-full"
+                  >
+                    <img src={smImg} alt={title} className="rounded-full" />
                   </div>
                   <p className="text-primary text-sm font-medium">{type}</p>
                   <p className="text-ltext font-bai-jamjuree font-semibold text-lg">
@@ -111,7 +115,30 @@ const SecondSlider = () => {
           Post your own task
         </button>
       </section>
-      <section></section>
+      <section className="grid grid-cols-2 gap-x-10 my-10">
+        <div className="pr-56 rounded-br-128 -mr-44 pl-16 py-20 bg-light-red">
+          <div className="text-text pr-6">
+            <h2 className="font-bai-jamjuree font-medium text-4xl">
+              Become a Service Provider and start
+              <span className="text-primary"> earning </span>
+              today!
+            </h2>
+            <p className="font-medium text-base my-4">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui
+              convallis fusce nulla tincidunt sem iaculis. Amet velit etiam
+              nisi.
+            </p>
+            <button className="bg-primary text-base font-poppins text-white font-medium py-4 px-7 rounded-20">
+              Start Earning
+            </button>
+          </div>
+        </div>
+        <div className="relative">
+          <img src={slide2} alt="slide2" className="absolute" />
+          <img src={half1} alt="half1" className="absolute right-0 top-60" />
+          <img src={half2} alt="half2" className="absolute right-0 top-0" />
+        </div>
+      </section>
     </>
   );
 };
