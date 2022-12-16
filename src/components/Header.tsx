@@ -47,9 +47,9 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="flex justify-center font-inter my-10 items-center">
+      <div className="flex justify-center font-inter mt-14 items-center">
         <span className="text-primary text-base font-medium">Everything is easy!</span>
-        <ol className="text-text flex items-center gap-x-10 ml-10">
+        <ol className="text-text flex items-center gap-x-14 ml-14">
           {[
             "Post a Task",
             "Set your budget or not",

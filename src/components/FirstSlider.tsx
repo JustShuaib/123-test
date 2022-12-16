@@ -2,7 +2,10 @@ import { ReactComponent as Arrow } from "../assets/arrow.svg";
 import itImg from "../assets/it.png";
 const FirstSlider = () => {
   return (
-    <section className="pl-16 mt-44 grid items-center grid-cols-4">
+    <section
+      // style={{ borderBottomRightRadius: "180px" }}
+      className="pl-16 mt-36 grid items-center grid-cols-4"
+    >
       <div className="col-span-1 relative">
         <div className="absolute -top-[80%] right-20">
           <Arrow />

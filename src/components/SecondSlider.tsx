@@ -35,8 +35,8 @@ const responsive = {
 const SecondSlider = () => {
   return (
     <>
-      <section className="my-10">
-        <h3 className="font-bai-jamjuree font-semibold text-center text-2xl text-text my-6">
+      <section className="mt-20 py-10 bg-light-red">
+        <h3 className="font-bai-jamjuree font-semibold text-center text-2xl text-text mt-6 mb-10">
           See what
           <span className="text-primary"> people </span>
           are getting done
@@ -111,31 +111,31 @@ const SecondSlider = () => {
           )}
         </Carousel>
 
-        <button className="bg-primary text-base font-poppins text-white font-medium py-4 my-6 rounded-20 mx-auto block w-52">
+        <button className="bg-primary text-base font-poppins text-white font-medium py-4 my-10 rounded-20 mx-auto block w-52">
           Post your own task
         </button>
       </section>
-      <section className="grid grid-cols-2 gap-x-10 my-10">
-        <div className="pr-56 rounded-br-128 -mr-44 pl-16 py-20 bg-light-red">
-          <div className="text-text pr-6">
+      <section className="grid grid-cols-2 gap-x-10">
+        <div className="pr-56 rounded-br-128 -mr-40 pl-16 py-36 bg-light-red">
+          <div className="text-text pr-10">
             <h2 className="font-bai-jamjuree font-medium text-4xl">
               Become a Service Provider and start
               <span className="text-primary"> earning </span>
               today!
             </h2>
-            <p className="font-medium text-base my-4">
+            <p className="font-medium text-base my-6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui
               convallis fusce nulla tincidunt sem iaculis. Amet velit etiam
               nisi.
             </p>
-            <button className="bg-primary text-base font-poppins text-white font-medium py-4 px-7 rounded-20">
+            <button className="bg-primary text-base font-poppins text-white font-medium py-3.5 px-7 rounded-20">
               Start Earning
             </button>
           </div>
         </div>
         <div className="relative">
-          <img src={slide2} alt="slide2" className="absolute" />
-          <img src={half1} alt="half1" className="absolute right-0 top-60" />
+          <img src={slide2} alt="slide2" className="absolute h-[437px] -top-2 w-96" />
+          <img src={half1} alt="half1" className="absolute right-0 top-60 h-96" />
           <img src={half2} alt="half2" className="absolute right-0 top-0" />
         </div>
       </section>
