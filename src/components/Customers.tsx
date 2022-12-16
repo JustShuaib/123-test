@@ -51,7 +51,7 @@ const reviews = [
     name: "Damilare Usman",
     img: dam,
     comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui convallis fusce nulla tincidunt sem iaculis. Amet velit etiam nisi.",
+      "Nulla pellentesque ultricies facilisi mi nibh. Vitae venenatis elit diam a. Magna consectetur sit sit nisi a at. Neque vulputate nunc vulputate habitant fermentum vulputate magnis tortor.",
   },
   {
     name: "Eze Chinedu",
@@ -68,14 +68,16 @@ const Customers = () => {
       </h3>
       <div className="grid overflow-y-clip relative grid-cols-3 items-start gap-8">
         <div className="absolute top-0 h-36 bg-gradient-to-b from-main-bg to-transparent w-full z-10"></div>
-        <div className="grid grid-flow-row -translate-y-24 grid-cols-1 gap-8">
+        <div className="grid grid-flow-row -translate-y-10 grid-cols-1 gap-8">
           {reviews.slice(0, 3).map(({ name, comment, img }, index) => (
             <div key={index} className="bg-white grid rounded-24 p-4">
               <div className="flex gap-x-2 mb-2 items-center">
                 <img src={img} alt={name} />
-                <p className="font-bai-jamjuree font-medium text-lg">{name}</p>
+                <p className="font-bai-jamjuree font-medium text-text text-lg">
+                  {name}
+                </p>
               </div>
-              <div className="flex gap-x-1 my-3">
+              <div className="flex gap-x-1.5 my-3">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <span key={star}>
                     <Star />
@@ -91,7 +93,9 @@ const Customers = () => {
             <div key={index} className="bg-white h-full rounded-24 p-4">
               <div className="flex gap-x-2 mb-2 items-center">
                 <img src={img} alt={name} />
-                <p className="font-bai-jamjuree font-medium text-lg">{name}</p>
+                <p className="font-bai-jamjuree font-medium text-text text-lg">
+                  {name}
+                </p>
               </div>
               <div className="flex gap-x-1 my-3">
                 {[1, 2, 3, 4, 5].map((star) => (
@@ -109,7 +113,9 @@ const Customers = () => {
             <div key={index} className="bg-white  rounded-24 p-4">
               <div className="flex gap-x-2 mb-2 items-center">
                 <img src={img} alt={name} />
-                <p className="font-bai-jamjuree font-medium text-lg">{name}</p>
+                <p className="font-bai-jamjuree font-medium text-text text-lg">
+                  {name}
+                </p>
               </div>
               <div className="flex gap-x-1 my-3">
                 {[1, 2, 3, 4, 5].map((star) => (
@@ -122,7 +128,7 @@ const Customers = () => {
             </div>
           ))}
         </div>
-        <div className="absolute bottom-14 rounded-br-full h-36 bg-gradient-to-t from-main-bg to-transparent w-full z-10"></div>
+        <div className="absolute bottom-10 rounded-br-128 h-56 bg-gradient-to-t from-main-bg to-transparent w-full z-10"></div>
       </div>
     </section>
   );
