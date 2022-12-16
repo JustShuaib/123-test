@@ -1,4 +1,4 @@
-import { Customers, FirstSlider, Footer, Header, MobileApp, Nav, SecondSlider } from "./components";
+import { Customers, FirstSlider, Footer, Header, MobileApp, Nav, Question, SecondSlider } from "./components";
 
 const App = () => {
   return (
@@ -9,6 +9,7 @@ const App = () => {
       <SecondSlider />
       <MobileApp />
       <Customers />
+      <Question />
       <Footer />
     </div>
   );
