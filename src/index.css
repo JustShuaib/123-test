@@ -8,7 +8,7 @@
     @apply bg-main-bg md:text-sm;
   }
 }
-.custom-dot-list-style li button{
+.custom-dot-list-style li button {
   @apply bg-black border-none w-2.5 h-2.5;
 }
 .custom-dot-list-style li.react-multi-carousel-dot--active button {
