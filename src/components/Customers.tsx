@@ -66,7 +66,8 @@ const Customers = () => {
       <h3 className="font-bai-jamjuree font-semibold text-center text-2xl text-text mt-6 mb-10">
         Our Customers love what we do.
       </h3>
-      <div className="grid overflow-y-clip grid-cols-3 items-start gap-8">
+      <div className="grid overflow-y-clip relative grid-cols-3 items-start gap-8">
+        <div className="absolute top-0 h-36 bg-gradient-to-b from-main-bg to-transparent w-full z-10"></div>
         <div className="grid grid-flow-row -translate-y-24 grid-cols-1 gap-8">
           {reviews.slice(0, 3).map(({ name, comment, img }, index) => (
             <div key={index} className="bg-white grid rounded-24 p-4">
@@ -121,6 +122,7 @@ const Customers = () => {
             </div>
           ))}
         </div>
+        <div className="absolute bottom-14 rounded-br-full h-36 bg-gradient-to-t from-main-bg to-transparent w-full z-10"></div>
       </div>
     </section>
   );
