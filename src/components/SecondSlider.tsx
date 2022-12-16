@@ -66,9 +66,7 @@ const SecondSlider = () => {
               <div
                 key={index}
                 className="rounded-25 bg-center relative bg-no-repeat bg-cover h-[370px]"
-                style={{
-                  backgroundImage: `url(${img})`,
-                }}
+                style={{ backgroundImage: `url(${img})` }}
               >
                 <span
                   className={`absolute top-3 px-3 py-1 left-5 text-sm capitalize rounded-[50px] ${
@@ -80,8 +78,10 @@ const SecondSlider = () => {
 
                 <div className="bg-white absolute bottom-4 p-5 w-11/12 left-1/2 -translate-x-1/2 rounded-25">
                   <div
-                    // style={{ clipPath: "circle(80%)" }}
-                    className="absolute -top-10 right-6 p-2 z-10 rounded-full"
+                    style={{ backgroundImage: `url(${img})` }}
+                    className={`absolute -top-10 right-8 p-2 rounded-full ${
+                      index === 0 ? "bg-center" : "bg-right-top"
+                    }`}
                   >
                     <img src={smImg} alt={title} className="rounded-full" />
                   </div>
