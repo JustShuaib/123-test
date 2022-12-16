@@ -2,6 +2,7 @@ import { ReactComponent as Logo } from "../assets/logo-white.svg";
 const Footer = () => {
   return (
     <footer
+    // TODO: MAKEE THIS CURVE MORE ACCURATE
       style={{
         // borderRadius: "40%/50% 30% 0 0",
         // borderRadius: "65%/180px 35%/200px 0 0",

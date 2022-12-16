@@ -56,13 +56,45 @@ const reviews = [
 ];
 const Customers = () => {
   return (
-    <section className="px-16">
+    <section className="px-16 mb-20">
       <h3 className="font-bai-jamjuree font-semibold text-center text-2xl text-text mt-6 mb-10">
         Our Customers love what we do.
       </h3>
-      <ul className="grid grid-cols-3 gap-4">
-        {reviews.map(({ name, comment, img }, index) => (
-          <li key={index} className='bg-white rounded-24 p-4'>
+      <ul className="grid grid-cols-3 gap-8">
+        {reviews.slice(0, 3).map(({ name, comment, img }, index) => (
+          <li key={index} className="bg-white rounded-24 p-4">
+            <div className="flex gap-x-2 mb-2 items-center">
+              <img src={img} alt={name} />
+              <p className="font-bai-jamjuree font-medium text-lg">{name}</p>
+            </div>
+            <div className="flex gap-x-1 my-3">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span key={star}>
+                  <Star />
+                </span>
+              ))}
+            </div>
+            <p>{comment}</p>
+          </li>
+        ))}
+        {reviews.slice(4,5).map(({ name, comment, img }, index) => (
+          <li key={index} className="bg-white rounded-24 p-4">
+            <div className="flex gap-x-2 mb-2 items-center">
+              <img src={img} alt={name} />
+              <p className="font-bai-jamjuree font-medium text-lg">{name}</p>
+            </div>
+            <div className="flex gap-x-1 my-3">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span key={star}>
+                  <Star />
+                </span>
+              ))}
+            </div>
+            <p>{comment}</p>
+          </li>
+        ))}
+        {reviews.slice(5,).map(({ name, comment, img }, index) => (
+          <li key={index} className="bg-white rounded-24 p-4">
             <div className="flex gap-x-2 mb-2 items-center">
               <img src={img} alt={name} />
               <p className="font-bai-jamjuree font-medium text-lg">{name}</p>
