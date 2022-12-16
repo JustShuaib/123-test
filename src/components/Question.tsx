@@ -2,7 +2,7 @@ import rightSide from '../assets/right-side.png';
 
 const Question = () => {
   return (
-    <div className="grid grid-cols-2 mb-32 pl-16 gap-32">
+    <div className="grid grid-cols-2 mb-64 pl-16 gap-32">
       <section>
         <h3 className="font-bai-jamjuree font-semibold text-3xl text-text mt-6 mb-10">
           Have a question? <br /> We are ready to assist

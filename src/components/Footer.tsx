@@ -1,17 +1,12 @@
 import { ReactComponent as Logo } from "../assets/logo-white.svg";
 const Footer = () => {
   return (
-    <footer
-    // TODO: MAKEE THIS CURVE MORE ACCURATE
-      style={{
-        // borderRadius: "40%/50% 30% 0 0",
-        // borderRadius: "65%/180px 35%/200px 0 0",
-        // borderRadius: "100% 100% 5% 5% / 28% 30% 5% 5%",
-        // borderRadius: "75% 85% 0% 0% / 30% 20% 0% 0%",
-        borderRadius: "80% 81% 0% 0% / 21% 16% 0% 0%",
-      }}
-      className="bg-primary px-14 pt-14 text-white"
-    >
+    <footer className="bg-primary px-14 text-white relative overflow-x-clip">
+      <div
+        style={{ borderRadius: "100% 100% 0% 0% / 100% 100% 0% 0%" }}
+        className="absolute w-[120%] -translate-x-1/2 left-1/2 -top-24 h-44 bg-primary -z-10"
+      ></div>
+
       <div className="flex flex-col px-4 justify-center items-center w-1/2 mx-auto">
         <Logo />
         <p className="font-bai-jamjuree tracking-tight font-medium text-center text-2xl my-5">
