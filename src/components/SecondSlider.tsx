@@ -35,7 +35,7 @@ const responsive = {
 const SecondSlider = () => {
   return (
     <>
-      <section className="mt-20 py-10 bg-light-red">
+      <section className="py-10 bg-light-red">
         <h3 className="font-bai-jamjuree font-semibold text-center text-2xl text-text mt-6 mb-10">
           See what
           <span className="text-primary"> people </span>
@@ -111,7 +111,7 @@ const SecondSlider = () => {
           )}
         </Carousel>
 
-        <button className="bg-primary text-base font-poppins text-white font-medium py-4 my-10 rounded-20 mx-auto block w-52">
+        <button className="bg-primary text-base font-poppins text-white font-medium py-4 mb-16 mt-10 rounded-20 mx-auto block w-52">
           Post your own task
         </button>
       </section>

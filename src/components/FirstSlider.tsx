@@ -4,8 +4,8 @@ const FirstSlider = () => {
   // TODO: Don't know how to implement this yet
   return (
     <section
-      // style={{ borderBottomRightRadius: "180px" }}
-      className="pl-16 mt-36 grid items-center grid-cols-4"
+   style={{borderRadius : '0 0 80% 81% / 0 0 21% 16%'}}
+      className="pl-16 pb-20 mt-36 grid items-center grid-cols-4"
     >
       <div className="col-span-1 relative">
         <div className="absolute -top-[80%] right-20">
