@@ -35,7 +35,11 @@ const responsive = {
 const SecondSlider = () => {
   return (
     <>
-      <section className="py-10 bg-light-red">
+      <section className="pb-10 pt-14 relative bg-light-red overflow-x-clip">
+        <div
+          style={{ borderRadius: "0% 0% 100% 100% / 0% 0% 100% 100%" }}
+          className="absolute w-[110%] -top-16 -translate-x-1/2 left-1/2 bg-main-bg h-24"
+        ></div>
         <h3 className="font-bai-jamjuree font-semibold text-center text-2xl text-text mt-6 mb-10">
           See what
           <span className="text-primary"> people </span>
@@ -134,8 +138,16 @@ const SecondSlider = () => {
           </div>
         </div>
         <div className="relative">
-          <img src={slide2} alt="slide2" className="absolute h-[437px] -top-2 w-96" />
-          <img src={half1} alt="half1" className="absolute right-0 top-60 h-96" />
+          <img
+            src={slide2}
+            alt="slide2"
+            className="absolute h-[437px] -top-2 w-96"
+          />
+          <img
+            src={half1}
+            alt="half1"
+            className="absolute right-0 top-60 h-96"
+          />
           <img src={half2} alt="half2" className="absolute right-0 top-0" />
         </div>
       </section>

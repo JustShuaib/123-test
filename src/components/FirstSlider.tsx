@@ -4,7 +4,6 @@ const FirstSlider = () => {
   // TODO: Don't know how to implement this yet
   return (
     <section
-   style={{borderRadius : '0 0 80% 81% / 0 0 21% 16%'}}
       className="pl-16 pb-20 mt-36 grid items-center grid-cols-4"
     >
       <div className="col-span-1 relative">
