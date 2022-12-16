@@ -5,3 +5,5 @@ export { default as Footer } from "./Footer";
 export { default as FirstSlider } from "./FirstSlider";
 export { default as SecondSlider } from "./SecondSlider";
 export { default as MobileApp } from "./MobileApp";
+export { default as Customers } from "./Customers";
+export { default as Question } from "./Question";

@@ -18,7 +18,7 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 3,
-    partialVisibilityGutter: 40,
+    partialVisibilityGutter: 50,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -49,10 +49,10 @@ const SecondSlider = () => {
           partialVisible={true}
           responsive={responsive}
           keyBoardControl={true}
-          containerClass="ml-16 pb-12"
+          containerClass="pb-12"
           removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
           dotListClass="custom-dot-list-style"
-          itemClass="px-4"
+          itemClass="px-4 first:ml-16"
         >
           {sliderDetails.map(
             (

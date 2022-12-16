@@ -4,7 +4,7 @@ import appImg from '../assets/app.png'
 
 const MobileApp = () => {
   return (
-    <div className="w-2/3 my-44 mx-auto grid grid-cols-2 gap-x-10 justify-between bg-white rounded-36 p-10 pr-0 pb-0">
+    <div className="w-2/3 mb-32 mt-44 mx-auto grid grid-cols-2 gap-x-10 justify-between bg-white rounded-36 p-10 pr-0 pb-0">
       <div>
         <p className="font-bai-jamjuree text-text font-semibold text-4xl">
           Try the mobile App
