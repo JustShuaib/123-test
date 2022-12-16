@@ -1,6 +1,7 @@
 import { ReactComponent as Arrow } from "../assets/arrow.svg";
 import itImg from "../assets/it.png";
 const FirstSlider = () => {
+  // TODO: Don't know how to implement this yet
   return (
     <section
       // style={{ borderBottomRightRadius: "180px" }}

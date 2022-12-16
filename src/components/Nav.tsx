@@ -7,7 +7,7 @@ const Nav = () => {
         <Logo />
         <button
           type="button"
-          className="text-primary font-bai-jamjuree py-2.5 px-5 rounded-16 border border-primary"
+          className="text-primary font-bai-jamjuree py-2.5 px-5 font-medium rounded-16 border-2 border-primary"
         >
           Post a job
         </button>

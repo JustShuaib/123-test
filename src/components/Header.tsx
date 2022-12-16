@@ -12,7 +12,7 @@ const Header = () => {
             <span className="text-primary"> Plumbing </span>
             done on your own terms
           </h1>
-          <p className="text-lg font-poppins my-5">
+          <p className="text-lg font-poppins text-text my-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui
             convallis fusce nulla tincidunt sem iaculis. Amet velit etiam nisi.
           </p>
@@ -37,7 +37,7 @@ const Header = () => {
               Get Started
             </button>
           </label>
-          <button className="mt-10 ml-4 flex items-center gap-x-2 font-bold">
+          <button className="mt-10 ml-4 flex text-ltext text-base items-center gap-x-2 font-bold">
             <Play />
             <span>See how it works</span>
           </button>
@@ -56,7 +56,7 @@ const Header = () => {
             "Receive quotes & pick the best provider",
           ].map((item, index) => (
             <li key={index}>
-              <span className="bg-primary font-bai-jamjuree rounded-full text-white w-9 h-9 inline-flex mr-2 items-center justify-center">
+              <span className="bg-primary font-bai-jamjuree rounded-full text-white w-10 h-10 inline-flex mr-2 items-center justify-center">
                 {index + 1}
               </span>
               {item}
