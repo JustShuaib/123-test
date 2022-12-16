@@ -86,7 +86,6 @@ const FirstSlider = () => {
       <div className="col-span-3">
         <Carousel
           showDots={true}
-          infinite={true}
           partialVisible={true}
           responsive={responsive}
           keyBoardControl={true}
