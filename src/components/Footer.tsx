@@ -1,27 +1,24 @@
 import { ReactComponent as Logo } from "../assets/logo-white.svg";
 const Footer = () => {
   return (
-    <footer className="bg-primary px-14 text-white relative overflow-x-clip">
-      <div
-        style={{ borderRadius: "100% 100% 0% 0% / 100% 100% 0% 0%" }}
-        className="absolute w-[120%] -translate-x-1/2 left-1/2 -top-24 h-44 bg-primary -z-10"
-      ></div>
+    <footer className="relative overflow-x-clip bg-primary px-6 text-white md:px-16">
+      <div className="absolute left-1/2 -top-24 -z-10 h-44 w-[120%] -translate-x-1/2 rounded-tl-[50%] rounded-tr-[50%] bg-primary md:rounded-tr-[100%] md:rounded-tl-[100%]"></div>
 
-      <div className="flex flex-col px-4 justify-center items-center w-1/2 mx-auto">
+      <div className="mx-auto flex flex-col items-center md:w-1/2 md:justify-center md:px-4">
         <Logo />
-        <p className="font-bai-jamjuree tracking-tight font-medium text-center text-2xl my-5">
+        <p className="my-5 text-center font-bai-jamjuree text-lg font-medium tracking-tight md:text-2xl">
           We connect people looking to get their to-do list done with people
           looking to make extra cash.
         </p>
         <ul
           role="group"
-          className="flex items-center justify-center gap-x-4 mb-10"
+          className="mb-10 flex items-center justify-center gap-x-4"
         >
           {["Post job", "Provide a Service"].map((item, index) => (
             <li key={index}>
               <button
                 type="button"
-                className="bg-btn-sec text-primary rounded-16 py-3 px-6 font-poppins font-medium"
+                className="rounded-16 bg-btn-sec py-3 px-6 font-poppins text-sm font-medium text-primary"
               >
                 {item}
               </button>
@@ -29,8 +26,8 @@ const Footer = () => {
           ))}
         </ul>
       </div>
-      <div className="h-px bg-white bg-opacity-20 w-[87%] mx-auto"></div>
-      <ul className="flex items-center justify-center gap-x-16 my-6">
+      <div className="mx-auto h-px w-[87%] bg-white bg-opacity-20"></div>
+      <ul className="my-4 flex flex-wrap items-center justify-center gap-x-8 md:my-6 md:gap-x-16">
         {[
           "Post a Task",
           "Browse Jobs",
@@ -39,16 +36,16 @@ const Footer = () => {
           "Contact us",
         ].map((item, index) => (
           <li key={index}>
-            <a href="#" className="text-white font-medium text-base">
+            <a href="#" className="text-sm font-medium text-white md:text-base">
               {item}
             </a>
           </li>
         ))}
       </ul>
       <div className="h-px bg-white bg-opacity-20"></div>
-      <div className="py-6 flex justify-between items-center text-btn-sec px-4 font-medium">
+      <div className="flex items-center justify-between py-6 text-sm font-medium text-btn-sec md:px-4 md:text-base">
         <span>&copy; {new Date().getFullYear()} Truelocal</span>
-        <div className="gap-x-4 flex items-center">
+        <div className="flex items-center gap-x-4">
           <span>Privacy & Cookies</span>
           <span>Terms & Conditions</span>
         </div>
