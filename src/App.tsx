@@ -2,7 +2,7 @@ import { Customers, FirstSlider, Footer, Header, MobileApp, Nav, Question, Secon
 
 const App = () => {
   return (
-    <div>
+    <>
       <Nav />
       <Header />
       <FirstSlider />
@@ -11,7 +11,7 @@ const App = () => {
       <Customers />
       <Question />
       <Footer />
-    </div>
+    </>
   );
 };
 

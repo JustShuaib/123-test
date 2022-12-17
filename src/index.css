@@ -14,3 +14,6 @@
 .custom-dot-list-style li.react-multi-carousel-dot--active button {
   @apply bg-primary;
 }
+.custom-dot-list-style.--first-slider{
+  /* @apply bg-red-500 w-full; */
+}

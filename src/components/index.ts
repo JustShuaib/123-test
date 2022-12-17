@@ -1,4 +1,3 @@
-export { default as Button } from "./Button";
 export { default as Nav } from "./Nav";
 export { default as Header } from "./Header";
 export { default as Footer } from "./Footer";
@@ -7,3 +6,4 @@ export { default as SecondSlider } from "./SecondSlider";
 export { default as MobileApp } from "./MobileApp";
 export { default as Customers } from "./Customers";
 export { default as Question } from "./Question";
+export { default as NavLinks } from "./NavLinks";

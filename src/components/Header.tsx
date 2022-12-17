@@ -37,7 +37,7 @@ const Header = () => {
               Get Started
             </button>
           </label>
-          <button className="mt-6 flex items-center gap-x-2 text-base font-bold text-ltext md:mt-10 md:ml-4">
+          <button className="my-6 md:pb-0 flex items-center gap-x-2 text-base font-bold text-ltext md:mt-10 md:ml-4">
             <Play />
             <span>See how it works</span>
           </button>
