@@ -76,6 +76,32 @@ const FirstSlider = () => {
   useCallback(() => {
     checkIsActive;
   }, []);
+  const section = document.querySelector(".observingContainer");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // If it is intersecting, change the image src to the data-image src
+        console.log(entry.target);
+        console.log('IS INTERSECTING!!!')
+        entry.target.setAttribute('src', entry.target.getAttribute('data-image') || '');
+        // // Stop observing the element
+        observer.unobserve(entry.target);
+      }else {
+        console.log('NOT INTERSECTING!!!')
+        entry.target.setAttribute('src', entry.target.getAttribute('data-s-image') || '');
+      }
+    });
+  }, {
+    //
+    root: section,
+    rootMargin: '100% 0% 100% 0%',
+    threshold: 1.0
+  });
+  const images = document.querySelectorAll(".observingContainer img");
+  images.forEach((image) => {
+    console.log(image);
+    observer.observe(image);
+  });
 
   return (
     <section className="mt-36 grid items-center gap-12 pb-20 md:grid-cols-5 md:pl-16">
@@ -101,7 +127,7 @@ const FirstSlider = () => {
           partialVisible={true}
           responsive={responsive}
           keyBoardControl={true}
-          containerClass="pb-8"
+          containerClass="pb-8 observingContainer"
           removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
           // TODO: Move the dots to the center
           dotListClass="custom-dot-list-style --first-slider"
@@ -117,10 +143,12 @@ const FirstSlider = () => {
             >
               <div className="relative">
                 <img
+                  data-image={img}
+                  data-s-image={smImg}
                   onMouseMove={checkIsActive}
                   onTouchMove={checkIsActive}
                   // src={ isActive ? img : smImg}
-                  src={index === 0 ? img : smImg}
+                  src={smImg}
                   className="h-72"
                   alt={title}
                 />
