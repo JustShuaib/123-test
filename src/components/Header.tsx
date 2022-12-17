@@ -37,12 +37,12 @@ const Header = () => {
               Get Started
             </button>
           </label>
-          <button className="my-6 md:pb-0 flex items-center gap-x-2 text-base font-bold text-ltext md:mt-10 md:ml-4">
+          <button className="my-6 flex items-center gap-x-2 text-base font-bold text-ltext md:mt-10 md:ml-4 md:pb-0">
             <Play />
             <span>See how it works</span>
           </button>
         </header>
-        <div className="col-span-3 md:-z-10">
+        <div className="col-span-3 px-6 md:-z-10 md:px-0">
           <img src={banner} alt="banner" className="max-w-full" />
         </div>
       </div>
@@ -51,7 +51,7 @@ const Header = () => {
         <span className="mb-2 text-base font-medium text-primary md:mb-0">
           Everything is easy!
         </span>
-        <ol className="flex flex-col gap-y-1 text-sm md:text-base items-center text-text md:ml-14 md:flex-row md:gap-x-14">
+        <ol className="flex flex-col items-center gap-y-1 text-sm text-text md:ml-14 md:flex-row md:gap-x-14 md:text-base">
           {[
             "Post a Task",
             "Set your budget or not",
