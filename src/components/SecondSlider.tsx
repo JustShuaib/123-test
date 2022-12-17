@@ -23,24 +23,21 @@ const responsive = {
   tablet: {
     breakpoint: { max: 1024, min: 464 },
     items: 2,
-    partialVisibilityGutter: 40,
+    partialVisibilityGutter: 20,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 1,
-    partialVisibilityGutter: 40,
+    partialVisibilityGutter: 0,
   },
 };
 
 const SecondSlider = () => {
   return (
     <>
-      <section className="pb-10 pt-14 relative bg-light-red overflow-x-clip">
-        <div
-          style={{ borderRadius: "0% 0% 100% 100% / 0% 0% 100% 100%" }}
-          className="absolute w-[110%] -top-16 -translate-x-1/2 left-1/2 bg-main-bg h-24"
-        ></div>
-        <h3 className="font-bai-jamjuree font-semibold text-center text-2xl text-text mt-6 mb-10">
+      <section className="relative overflow-x-clip bg-light-red pb-10 pt-14">
+        <div className="absolute -top-16 left-1/2 h-24 w-[110%] -translate-x-1/2 rounded-bl-[50%] rounded-br-[50%] bg-main-bg md:rounded-br-[100%] md:rounded-bl-[100%]"></div>
+        <h3 className="mt-6 mb-10 text-center font-bai-jamjuree text-xl font-semibold text-text md:text-2xl">
           See what
           <span className="text-primary"> people </span>
           are getting done
@@ -53,10 +50,10 @@ const SecondSlider = () => {
           partialVisible={true}
           responsive={responsive}
           keyBoardControl={true}
-          containerClass="pb-12"
+          containerClass="pb-10 md:pb-12"
           removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
           dotListClass="custom-dot-list-style"
-          itemClass="px-4 first:ml-16"
+          itemClass="px-8 md:px-4 md:first:ml-16"
         >
           {sliderDetails.map(
             (
@@ -65,47 +62,53 @@ const SecondSlider = () => {
             ) => (
               <div
                 key={index}
-                className="rounded-25 bg-center relative bg-no-repeat bg-cover h-[370px]"
+                className="relative h-[350px] rounded-25 bg-cover bg-center bg-no-repeat md:h-[370px]"
                 style={{ backgroundImage: `url(${img})` }}
               >
                 <span
-                  className={`absolute top-3 px-3 py-1 left-5 text-sm capitalize rounded-[50px] ${
+                  className={`absolute top-3 left-5 rounded-[50px] px-3 py-1 text-xs capitalize md:text-sm ${
                     open ? "bg-white text-text" : "bg-primary text-white"
                   }`}
                 >
                   {open ? "open" : "engaged"}
                 </span>
 
-                <div className="bg-white absolute bottom-4 p-5 w-11/12 left-1/2 -translate-x-1/2 rounded-25">
+                <div className="absolute bottom-4 left-1/2 w-11/12 -translate-x-1/2 rounded-25 bg-white p-3.5 md:p-5">
                   <div
                     style={{ backgroundImage: `url(${img})` }}
-                    className={`absolute -top-10 right-8 p-2 rounded-full ${
+                    className={`absolute -top-8 right-6 rounded-full p-2 md:-top-10 md:right-8 ${
                       index === 0 ? "bg-center" : "bg-right-top"
                     }`}
                   >
-                    <img src={smImg} alt={title} className="rounded-full" />
+                    <img
+                      src={smImg}
+                      alt={title}
+                      className="w-12 rounded-full md:w-auto"
+                    />
                   </div>
-                  <p className="text-primary text-sm font-medium">{type}</p>
-                  <p className="text-ltext font-bai-jamjuree font-semibold text-lg">
+                  <p className="text-xs font-medium text-primary md:text-sm">
+                    {type}
+                  </p>
+                  <p className="font-bai-jamjuree text-base font-semibold text-ltext md:text-lg">
                     {title}
                   </p>
-                  <p className="text-ltext flex items-center gap-x-1 text-sm my-2">
+                  <p className="my-2 flex items-center gap-x-1 text-xs text-ltext md:text-sm">
                     <Location />
                     <span>{loc}</span>
                   </p>
-                  <p className="text-ltext flex items-center gap-x-1 text-sm my-2">
+                  <p className="my-2 flex items-center gap-x-1 text-xs text-ltext md:text-sm">
                     <Clock />
                     <span>{time}</span>
                   </p>
-                  <p className="font-bai-jamjuree font-semibold text-lg">
+                  <p className="font-bai-jamjuree text-base font-semibold md:text-lg">
                     {price}
                   </p>
                   <div className="flex items-center justify-between text-primary">
                     <span className="flex items-center gap-x-1">
                       <Star />
-                      <span className="text-sm mt-1">{star}</span>
+                      <span className="mt-1 text-sm">{star}</span>
                     </span>
-                    <button className="flex items-center gap-x-1.5">
+                    <button className="flex items-center gap-x-1.5 text-sm md:text-base">
                       Details <Right />
                     </button>
                   </div>
@@ -115,33 +118,34 @@ const SecondSlider = () => {
           )}
         </Carousel>
 
-        <button className="bg-primary text-base font-poppins text-white font-medium py-4 mb-16 mt-10 rounded-20 mx-auto block w-52">
+        <button className="mx-auto mt-6 block w-52 rounded-20 bg-primary py-3.5 font-poppins text-sm font-medium text-white md:mb-16 md:mt-10 md:py-4 md:text-base">
           Post your own task
         </button>
       </section>
-      <section className="grid grid-cols-2 gap-x-10">
-        <div className="pr-56 rounded-br-128 -mr-40 pl-16 py-36 bg-light-red">
-          <div className="text-text pr-10">
-            <h2 className="font-bai-jamjuree font-medium text-4xl">
+
+      <section className="grid gap-10 md:grid-cols-2">
+        <div className="rounded-br-128 bg-light-red py-10 pl-8 md:-mr-40 md:py-36 md:pr-56 md:pl-16">
+          <div className="pr-8 text-text md:pr-10">
+            <h2 className="font-bai-jamjuree text-3xl font-medium md:text-4xl">
               Become a Service Provider and start
               <span className="text-primary"> earning </span>
               today!
             </h2>
-            <p className="font-medium text-base my-6">
+            <p className="my-6 text-base font-medium">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui
               convallis fusce nulla tincidunt sem iaculis. Amet velit etiam
               nisi.
             </p>
-            <button className="bg-primary text-base font-poppins text-white font-medium py-3.5 px-7 rounded-20">
+            <button className="rounded-20 bg-primary py-3.5 px-7 font-poppins text-base font-medium text-white">
               Start Earning
             </button>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative hidden md:block">
           <img
             src={slide2}
             alt="slide2"
-            className="absolute h-[437px] -top-2 w-96"
+            className="absolute -top-2 h-[437px] w-96"
           />
           <img
             src={half1}
