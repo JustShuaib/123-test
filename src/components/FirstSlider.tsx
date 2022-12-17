@@ -108,27 +108,31 @@ const FirstSlider = () => {
           itemClass="px-4"
         >
           {services.map(({ title, desc, img, smImg }, index) => (
-            <div className="flex justify-start bg-red-200" key={index}>
-              <div className="relative bg-green-200">
+            <div
+              className={`flex justify-start ${
+                index === 0 ? "" : ""
+                // : "-translate-x-80 bg-red-300 first-of-type:translate-x-0"
+              }`}
+              key={index}
+            >
+              <div className="relative">
                 <img
                   onMouseMove={checkIsActive}
                   onTouchMove={checkIsActive}
                   // src={ isActive ? img : smImg}
                   src={index === 0 ? img : smImg}
-                  className="h-80"
+                  className="h-72"
                   alt={title}
                 />
 
                 <div
-                  className={`absolute w-full bg-yellow-700 p-4 text-white md:pl-6 ${
-                    index === 0
-                      ? "bottom-6 h-1/4 md:bottom-8"
-                      : "bottom-6 h-full"
+                  className={`absolute bottom-6 w-full p-4 text-white md:pl-6 ${
+                    index === 0 ? "h-1/4 md:bottom-8" : ""
                   }`}
                 >
                   <p
-                    className={`font-bai-jamjuree bg-yellow-300 text-lg font-medium md:text-xl ${
-                      index === 0 ? "rotate-0" : "-rotate-90"
+                    className={`font-bai-jamjuree text-lg font-medium md:text-xl ${
+                      index === 0 ? "" : "rotate-180 [writing-mode:vertical-lr]"
                     }`}
                   >
                     {title}
