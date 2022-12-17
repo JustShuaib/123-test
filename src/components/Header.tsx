@@ -27,12 +27,12 @@ const Header = () => {
                 id="email"
                 type="email"
                 placeholder="Enter your email address"
-                className="py-1 font-poppins text-sm placeholder:text-[#777777] focus:outline-none md:py-3 md:pr-9 md:text-base"
+                className="py-1 font-poppins border pr-2 text-sm placeholder:text-[#777777] focus:outline-none md:py-3 md:pr-9 md:text-base"
               />
             </div>
             <button
               type="submit"
-              className="rounded-20 bg-primary px-3 py-2 font-poppins text-xs font-medium text-white md:px-7 md:py-4 md:text-base"
+              className="rounded-20 bg-primary px-3 py-2 font-poppins text-xs font-medium text-white min-w-max md:min-w-fit md:px-7 md:py-4 md:text-base"
             >
               Get Started
             </button>
