@@ -30,12 +30,12 @@ const Header = () => {
                 className="py-1 font-poppins text-sm placeholder:text-[#777777] focus:outline-none md:py-3 md:pr-9 md:text-base"
               />
             </div>
-            {/* <button
+            <button
               type="submit"
-              className="min-w-max rounded-20 bg-primary px-3 py-2 font-poppins text-xs font-medium text-white md:min-w-fit md:px-7 md:py-4 md:text-base"
+              className="rounded-20 bg-primary px-3 py-2 font-poppins text-xs font-medium text-white md:px-7 md:py-4 md:text-base"
             >
               Get Started
-            </button> */}
+            </button>
           </label>
           <button className="my-6 flex items-center gap-x-2 text-base font-bold text-ltext md:mt-10 md:ml-4 md:pb-0">
             <Play />
