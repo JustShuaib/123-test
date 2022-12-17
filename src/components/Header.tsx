@@ -21,7 +21,7 @@ const Header = () => {
             htmlFor="email"
             className="flex items-center justify-between rounded-25 bg-white p-2 shadow-input md:-mr-32 md:pl-4"
           >
-            <div className="flex items-center justify-between max-w-min md:justify-start gap-2 md:gap-6">
+            <div className="flex items-center justify-between max-w-[80%] md:max-w-none md:justify-start gap-2 md:gap-6">
               <Mail />
               <input
                 id="email"
