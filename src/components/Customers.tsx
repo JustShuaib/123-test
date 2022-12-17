@@ -62,13 +62,13 @@ const reviews = [
 ];
 const Customers = () => {
   return (
-    <section className="px-16 mb-20">
+    <section className="px-8 md:px-16 mb-20">
       <h3 className="font-bai-jamjuree font-semibold text-center text-2xl text-text mt-6 mb-10">
         Our Customers love what we do.
       </h3>
-      <div className="grid overflow-y-clip relative grid-cols-3 items-start gap-8">
+      <div className="grid overflow-y-clip relative md:grid-cols-3 items-start gap-8">
         <div className="absolute top-0 h-36 bg-gradient-to-b from-main-bg to-transparent w-full z-10"></div>
-        <div className="grid grid-flow-row -translate-y-10 grid-cols-1 gap-8">
+        <div className="grid grid-flow-row md:-translate-y-10 grid-cols-1 gap-8">
           {reviews.slice(0, 3).map(({ name, comment, img }, index) => (
             <div key={index} className="bg-white grid rounded-24 p-4">
               <div className="flex gap-x-2 mb-2 items-center">
@@ -108,7 +108,7 @@ const Customers = () => {
             </div>
           ))}
         </div>
-        <div className="grid grid-flow-row grid-cols-1 -translate-y-32 gap-8">
+        <div className="grid grid-flow-row grid-cols-1 md:-translate-y-32 gap-8">
           {reviews.slice(6).map(({ name, comment, img }, index) => (
             <div key={index} className="bg-white  rounded-24 p-4">
               <div className="flex gap-x-2 mb-2 items-center">
@@ -128,7 +128,7 @@ const Customers = () => {
             </div>
           ))}
         </div>
-        <div className="absolute bottom-10 rounded-br-128 h-56 bg-gradient-to-t from-main-bg to-transparent w-full z-10"></div>
+        <div className="absolute -bottom-20 md:bottom-10 rounded-br-128 h-56 bg-gradient-to-t from-main-bg to-transparent w-full z-10"></div>
       </div>
     </section>
   );
