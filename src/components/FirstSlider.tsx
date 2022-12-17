@@ -115,7 +115,7 @@ const FirstSlider = () => {
                   onTouchMove={checkIsActive}
                   // src={ isActive ? img : smImg}
                   src={index === 0 ? img : smImg}
-                  className="h-64"
+                  className="h-80"
                   alt={title}
                 />
 
@@ -123,12 +123,12 @@ const FirstSlider = () => {
                   className={`absolute w-full bg-yellow-700 p-4 text-white md:pl-6 ${
                     index === 0
                       ? "bottom-6 h-1/4 md:bottom-8"
-                      : "bottom-6 h-max"
+                      : "bottom-6 h-full"
                   }`}
                 >
                   <p
                     className={`font-bai-jamjuree bg-yellow-300 text-lg font-medium md:text-xl ${
-                      index === 0 ? "rotate-0" : "-rotate-90 w-full"
+                      index === 0 ? "rotate-0" : "-rotate-90"
                     }`}
                   >
                     {title}
