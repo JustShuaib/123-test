@@ -17,7 +17,7 @@ const Header = () => {
             convallis fusce nulla tincidunt sem iaculis. Amet velit etiam nisi.
           </p>
 
-          <label
+          {/* <label
             htmlFor="email"
             className="flex items-center justify-between rounded-25 bg-white p-2 shadow-input md:-mr-32 md:pl-4"
           >
@@ -36,13 +36,13 @@ const Header = () => {
             >
               Get Started
             </button>
-          </label>
+          </label> */}
           <button className="my-6 flex items-center gap-x-2 text-base font-bold text-ltext md:mt-10 md:ml-4 md:pb-0">
             <Play />
             <span>See how it works</span>
           </button>
         </header>
-        <div className="col-span-3 w-screen px-6 md:-z-10 md:px-0">
+        <div className="col-span-3 w-screen px-6 md:-z-10 md:w-auto md:px-0">
           <img src={banner} alt="banner" className="max-w-full" />
         </div>
       </div>
