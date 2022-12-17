@@ -1,19 +1,18 @@
-import rightSide from '../assets/right-side.png';
-
+import rightSide from "../assets/right-side.png";
 const Question = () => {
   return (
-    <div className="grid grid-cols-2 mb-64 pl-16 gap-32">
+    <div className="mb-[600px] md:mb-64 grid md:gap-32 md:grid-cols-2 md:pl-16">
       <section>
-        <h3 className="font-bai-jamjuree font-semibold text-3xl text-text mt-6 mb-10">
+        <h3 className="mt-6 mb-10 text-center font-bai-jamjuree text-2xl font-semibold text-text md:text-left md:text-3xl">
           Have a question? <br /> We are ready to assist
         </h3>
-        <form className="flex flex-col items-start w-10/12 gap-y-8">
+        <form className="flex flex-col items-start gap-y-4 px-8 md:w-10/12 md:gap-y-8 md:px-0">
           <input
-            className="border-b bg-transparent border-[#AAAA] focus:outline-none p-3 w-full placeholder:text-[#1D1D1D]"
+            className="w-full border-b border-[#AAAA] bg-transparent p-3 placeholder:text-[#1D1D1D] focus:outline-none"
             placeholder="Enter your email"
           />
           <input
-            className="border-b border-[#AAAA] bg-transparent focus:outline-none p-3 w-full placeholder:text-[#1D1D1D]"
+            className="w-full border-b border-[#AAAA] bg-transparent p-3 placeholder:text-[#1D1D1D] focus:outline-none"
             placeholder="Type your message"
           />
         </form>
@@ -22,7 +21,7 @@ const Question = () => {
         <img
           src={rightSide}
           alt="right side"
-          className="h-[520px] -mt-56 absolute right-0"
+          className="absolute right-0 md:-mt-56 md:h-[520px]"
         />
       </div>
     </div>
