@@ -42,7 +42,7 @@ const Header = () => {
             <span>See how it works</span>
           </button>
         </header>
-        <div className="col-span-3 px-6 md:-z-10 md:px-0">
+        <div className="w-full col-span-3 px-6 md:-z-10 md:px-0">
           <img src={banner} alt="banner" className="max-w-full" />
         </div>
       </div>
