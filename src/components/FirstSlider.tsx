@@ -1,3 +1,4 @@
+import { useState, useCallback, MouseEvent, TouchEvent } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -25,6 +26,7 @@ const responsive = {
 };
 
 const FirstSlider = () => {
+  const [isActive, setIsActive] = useState(false);
   // TODO: Don't know how to implement this yet
   const services = [
     {
@@ -64,10 +66,21 @@ const FirstSlider = () => {
       desc: "For software, web development, networking, programming, etc.",
     },
   ];
+  const checkIsActive = (e: MouseEvent | TouchEvent) => {
+    const parentElement = e.currentTarget.parentElement?.parentElement;
+    const isActive = parentElement?.classList.contains(
+      "react-multi-carousel-item--active"
+    );
+    setIsActive(isActive ? true : false);
+  };
+  useCallback(() => {
+    checkIsActive;
+  }, []);
+
   return (
     <section className="mt-36 grid items-center gap-12 pb-20 md:grid-cols-5 md:pl-16">
       <div className="relative col-span-2 w-screen px-8 md:w-auto md:px-0">
-        <Arrow className="absolute -top-40 w-28 md:-top-[95%] right-20 md:w-auto" />
+        <Arrow className="absolute -top-40 right-20 w-28 md:-top-[95%] md:w-auto" />
         <div className="text-text md:pr-14">
           <h2 className="font-bai-jamjuree text-2xl font-medium md:text-4xl">
             Explore by Categories
@@ -95,13 +108,39 @@ const FirstSlider = () => {
           itemClass="px-4"
         >
           {services.map(({ title, desc, img, smImg }, index) => (
-            <div className="relative" key={index}>
-              <img src={img} alt={title} />
-              <div className="absolute  bottom-6 h-1/4 p-4 text-white md:bottom-8 md:pl-6">
-                <p className="font-bai-jamjuree text-lg font-medium md:text-2xl">
-                  {title}
-                </p>
-                <p className="font-mulish">{desc}</p>
+            <div className="flex justify-start bg-red-200" key={index}>
+              <div className="relative bg-green-200">
+                <img
+                  onMouseMove={checkIsActive}
+                  onTouchMove={checkIsActive}
+                  // src={ isActive ? img : smImg}
+                  src={index === 0 ? img : smImg}
+                  className="h-64"
+                  alt={title}
+                />
+
+                <div
+                  className={`absolute w-full bg-yellow-700 p-4 text-white md:pl-6 ${
+                    index === 0
+                      ? "bottom-6 h-1/4 md:bottom-8"
+                      : "bottom-6 h-max"
+                  }`}
+                >
+                  <p
+                    className={`font-bai-jamjuree bg-yellow-300 text-lg font-medium md:text-xl ${
+                      index === 0 ? "rotate-0" : "-rotate-90 w-full"
+                    }`}
+                  >
+                    {title}
+                  </p>
+                  <p
+                    className={`font-mulish ${
+                      index === 0 ? "block" : "hidden"
+                    }`}
+                  >
+                    {desc}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
