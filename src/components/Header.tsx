@@ -21,13 +21,13 @@ const Header = () => {
             htmlFor="email"
             className="flex items-center justify-between rounded-25 bg-white p-2 shadow-input md:-mr-32 md:pl-4"
           >
-            <div className="flex items-center justify-start gap-2 md:gap-6">
+            <div className="flex items-center justify-between max-w-min md:justify-start gap-2 md:gap-6">
               <Mail />
               <input
                 id="email"
                 type="email"
                 placeholder="Enter your email address"
-                className="py-1 font-poppins border pr-2 text-sm placeholder:text-[#777777] focus:outline-none md:py-3 md:pr-9 md:text-base"
+                className="py-1 font-poppins text-sm placeholder:text-[#777777] focus:outline-none md:py-3 md:pr-9 md:text-base"
               />
             </div>
             <button
