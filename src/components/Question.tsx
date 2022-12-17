@@ -1,7 +1,7 @@
 import rightSide from "../assets/right-side.png";
 const Question = () => {
   return (
-    <div className="mb-[600px] md:mb-64 grid md:gap-32 md:grid-cols-2 md:pl-16">
+    <div className="mb-[600px] grid md:mb-64 md:grid-cols-2 md:gap-32 md:pl-16">
       <section>
         <h3 className="mt-6 mb-10 text-center font-bai-jamjuree text-2xl font-semibold text-text md:text-left md:text-3xl">
           Have a question? <br /> We are ready to assist
