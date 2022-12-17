@@ -118,41 +118,38 @@ const SecondSlider = () => {
           )}
         </Carousel>
 
-        <button className="mx-auto mt-6 block w-52 rounded-20 bg-primary py-3.5 font-poppins text-sm font-medium text-white md:mb-16 md:mt-10 md:py-4 md:text-base">
+        <button className="mx-auto mt-6 block w-52 rounded-20 bg-primary py-3.5 font-poppins text-sm font-medium text-white md:mb-28 md:mt-10 md:py-4 md:text-base">
           Post your own task
         </button>
       </section>
 
-      <section className="grid gap-10 md:grid-cols-2">
-        <div className="rounded-br-128 bg-light-red py-10 pl-8 md:-mr-40 md:py-36 md:pr-56 md:pl-16">
+      <section className="mb-[800px] grid gap-16 md:mb-52 md:grid-cols-2 md:gap-10">
+        <div className="rounded-br-128 bg-light-red pb-36 pt-10 pl-8 md:-mr-40 md:pt-20 md:pb-64 md:pr-56 md:pl-16">
           <div className="pr-8 text-text md:pr-10">
-            <h2 className="font-bai-jamjuree text-3xl font-medium md:text-4xl">
+            <h2 className="font-bai-jamjuree text-2xl font-medium md:text-4xl">
               Become a Service Provider and start
               <span className="text-primary"> earning </span>
               today!
             </h2>
-            <p className="my-6 text-base font-medium">
+            <p className="my-4 text-sm font-medium md:my-6 md:text-base">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui
               convallis fusce nulla tincidunt sem iaculis. Amet velit etiam
               nisi.
             </p>
-            <button className="rounded-20 bg-primary py-3.5 px-7 font-poppins text-base font-medium text-white">
+            <button className="rounded-16 bg-primary py-2.5 px-8 font-poppins text-base font-medium text-white md:rounded-20 md:py-3.5 md:px-7">
               Start Earning
             </button>
           </div>
         </div>
-        <div className="relative hidden md:block">
+
+        <div className="relative">
+          <img src={slide2} alt="slide2" className="absolute md:-top-20" />
+          <img src={half1} alt="half1" className="absolute right-0 top-60" />
           <img
-            src={slide2}
-            alt="slide2"
-            className="absolute -top-2 h-[437px] w-96"
+            src={half2}
+            alt="half2"
+            className="absolute right-0 md:-top-10"
           />
-          <img
-            src={half1}
-            alt="half1"
-            className="absolute right-0 top-60 h-96"
-          />
-          <img src={half2} alt="half2" className="absolute right-0 top-0" />
         </div>
       </section>
     </>

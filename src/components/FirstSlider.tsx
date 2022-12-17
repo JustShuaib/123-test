@@ -66,10 +66,10 @@ const FirstSlider = () => {
   ];
   return (
     <section className="mt-36 grid items-center gap-12 pb-20 md:grid-cols-5 md:pl-16">
-      <div className="relative w-screen md:w-auto px-8 md:px-0 col-span-2">
-        <Arrow className="absolute -top-40 left-16 w-28 md:-top-[95%] md:right-20 md:w-auto" />
-        <div className="md:pr-14 text-text">
-          <h2 className="font-bai-jamjuree text-3xl font-medium md:text-4xl">
+      <div className="relative col-span-2 w-screen px-8 md:w-auto md:px-0">
+        <Arrow className="absolute -top-40 w-28 md:-top-[95%] right-20 md:w-auto" />
+        <div className="text-text md:pr-14">
+          <h2 className="font-bai-jamjuree text-2xl font-medium md:text-4xl">
             Explore by Categories
           </h2>
           <p className="my-4 text-base font-medium md:mr-14">
@@ -82,8 +82,8 @@ const FirstSlider = () => {
         </div>
       </div>
 
-      <div className="w-screen md:w-auto col-span-3">
-         <Carousel
+      <div className="col-span-3 w-screen md:w-auto">
+        <Carousel
           showDots={true}
           partialVisible={true}
           responsive={responsive}
@@ -97,8 +97,8 @@ const FirstSlider = () => {
           {services.map(({ title, desc, img, smImg }, index) => (
             <div className="relative" key={index}>
               <img src={img} alt={title} />
-              <div className="absolute  md:bottom-8 bottom-6 h-1/4 text-white p-4 md:pl-6">
-                <p className="text-lg font-bai-jamjuree font-medium md:text-2xl">
+              <div className="absolute  bottom-6 h-1/4 p-4 text-white md:bottom-8 md:pl-6">
+                <p className="font-bai-jamjuree text-lg font-medium md:text-2xl">
                   {title}
                 </p>
                 <p className="font-mulish">{desc}</p>
