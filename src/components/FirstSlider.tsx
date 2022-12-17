@@ -20,7 +20,7 @@ const responsive = {
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 1,
-    partialVisibilityGutter: 40,
+    partialVisibilityGutter: 0,
   },
 };
 
@@ -65,40 +65,40 @@ const FirstSlider = () => {
     },
   ];
   return (
-    <section className="pl-16 pb-20 mt-36 grid gap-x-12 items-center grid-cols-5">
-      <div className="col-span-2 relative">
-        <div className="absolute -top-[95%] right-20">
-          <Arrow />
-        </div>
-        <div className="text-text pr-14">
-          <h2 className="font-bai-jamjuree font-medium text-4xl">
+    <section className="mt-36 grid items-center gap-12 pb-20 md:grid-cols-5 md:pl-16">
+      <div className="relative w-screen md:w-auto px-8 md:px-0 col-span-2">
+        <Arrow className="absolute -top-40 left-16 w-28 md:-top-[95%] md:right-20 md:w-auto" />
+        <div className="md:pr-14 text-text">
+          <h2 className="font-bai-jamjuree text-3xl font-medium md:text-4xl">
             Explore by Categories
           </h2>
-          <p className="font-medium mr-14 text-base my-4">
+          <p className="my-4 text-base font-medium md:mr-14">
             Browse our categories and find the right talents that matches the
             job you want to get done.
           </p>
-          <button className="bg-primary text-base font-poppins text-white font-medium py-4 px-7 rounded-20">
+          <button className="rounded-20 bg-primary px-7 py-3.5 font-poppins text-sm font-medium text-white md:py-4 md:text-base">
             See all Categories
           </button>
         </div>
       </div>
-      <div className="col-span-3">
-        <Carousel
+
+      <div className="w-screen md:w-auto col-span-3">
+         <Carousel
           showDots={true}
           partialVisible={true}
           responsive={responsive}
           keyBoardControl={true}
           containerClass="pb-8"
           removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
-          dotListClass="custom-dot-list-style"
+          // TODO: Move the dots to the center
+          dotListClass="custom-dot-list-style --first-slider"
           itemClass="px-4"
         >
           {services.map(({ title, desc, img, smImg }, index) => (
             <div className="relative" key={index}>
               <img src={img} alt={title} />
-              <div className="text-white absolute pl-6 bottom-6 h-1/4">
-                <p className="font-bai-jamjuree font-medium text-2xl">
+              <div className="absolute  md:bottom-8 bottom-6 h-1/4 text-white p-4 md:pl-6">
+                <p className="text-lg font-bai-jamjuree font-medium md:text-2xl">
                   {title}
                 </p>
                 <p className="font-mulish">{desc}</p>
