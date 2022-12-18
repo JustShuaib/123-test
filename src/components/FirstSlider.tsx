@@ -1,7 +1,6 @@
-import { useState, useCallback, MouseEvent, TouchEvent } from "react";
+import { useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
 import { ReactComponent as Arrow } from "../assets/arrow.svg";
 import itImg from "../assets/it.png";
 import maintImg from "../assets/maint.png";
@@ -11,12 +10,12 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 2,
-    partialVisibilityGutter: 50,
+    partialVisibilityGutter: 0,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
     items: 2,
-    partialVisibilityGutter: 40,
+    partialVisibilityGutter: 0,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
@@ -26,8 +25,6 @@ const responsive = {
 };
 
 const FirstSlider = () => {
-  const [isActive, setIsActive] = useState(false);
-  // TODO: Don't know how to implement this yet
   const services = [
     {
       title: "IT Services",
@@ -66,42 +63,42 @@ const FirstSlider = () => {
       desc: "For software, web development, networking, programming, etc.",
     },
   ];
-  const checkIsActive = (e: MouseEvent | TouchEvent) => {
-    const parentElement = e.currentTarget.parentElement?.parentElement;
-    const isActive = parentElement?.classList.contains(
-      "react-multi-carousel-item--active"
-    );
-    setIsActive(isActive ? true : false);
-  };
-  useCallback(() => {
-    checkIsActive;
+
+  useEffect(() => {
+    window.addEventListener("load", createObserver);
+    return () => {
+      window.removeEventListener("load", createObserver);
+    };
   }, []);
-  const section = document.querySelector(".observingContainer");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // If it is intersecting, change the image src to the data-image src
-        console.log(entry.target);
-        console.log('IS INTERSECTING!!!')
-        entry.target.setAttribute('src', entry.target.getAttribute('data-image') || '');
-        // // Stop observing the element
-        observer.unobserve(entry.target);
-      }else {
-        console.log('NOT INTERSECTING!!!')
-        entry.target.setAttribute('src', entry.target.getAttribute('data-s-image') || '');
+
+  const createObserver = () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const img = entry.target.querySelector("img");
+          const firstParagraph =
+            entry.target.querySelector(".font-bai-jamjuree");
+          const secondParagraph = entry.target.querySelector(".font-mulish");
+          if (entry.isIntersecting) {
+            console.log("TEST");
+            img?.setAttribute("src", img?.getAttribute("data-image") || "");
+            firstParagraph?.classList.remove("rotate-180");
+            firstParagraph?.classList.remove("[writing-mode:vertical-lr]");
+            secondParagraph?.classList.remove("hidden");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        rootMargin: "0px 0px 100px 0px",
+        threshold: 1.0,
       }
+    );
+    const imagesContainer = document.querySelectorAll(".carouselItem");
+    imagesContainer.forEach((container) => {
+      observer.observe(container);
     });
-  }, {
-    //
-    root: section,
-    rootMargin: '100% 0% 100% 0%',
-    threshold: 1.0
-  });
-  const images = document.querySelectorAll(".observingContainer img");
-  images.forEach((image) => {
-    console.log(image);
-    observer.observe(image);
-  });
+  };
 
   return (
     <section className="mt-36 grid items-center gap-12 pb-20 md:grid-cols-5 md:pl-16">
@@ -127,51 +124,27 @@ const FirstSlider = () => {
           partialVisible={true}
           responsive={responsive}
           keyBoardControl={true}
-          containerClass="pb-8 observingContainer"
+          containerClass="pb-8"
           removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
           // TODO: Move the dots to the center
           dotListClass="custom-dot-list-style --first-slider"
           itemClass="px-4"
         >
           {services.map(({ title, desc, img, smImg }, index) => (
-            <div
-              className={`flex justify-start ${
-                index === 0 ? "" : ""
-                // : "-translate-x-80 bg-red-300 first-of-type:translate-x-0"
-              }`}
-              key={index}
-            >
-              <div className="relative">
+            <div className="flex justify-start" key={index}>
+              <div className="carouselItem relative w-[300px] transition-all">
                 <img
                   data-image={img}
-                  data-s-image={smImg}
-                  onMouseMove={checkIsActive}
-                  onTouchMove={checkIsActive}
-                  // src={ isActive ? img : smImg}
                   src={smImg}
                   className="h-72"
                   alt={title}
                 />
 
-                <div
-                  className={`absolute bottom-6 w-full p-4 text-white md:pl-6 ${
-                    index === 0 ? "h-1/4 md:bottom-8" : ""
-                  }`}
-                >
-                  <p
-                    className={`font-bai-jamjuree text-lg font-medium md:text-xl ${
-                      index === 0 ? "" : "rotate-180 [writing-mode:vertical-lr]"
-                    }`}
-                  >
+                <div className="absolute bottom-6 w-full p-4 text-white md:pl-6">
+                  <p className="rotate-180 font-bai-jamjuree text-lg font-medium [writing-mode:vertical-lr] md:text-xl">
                     {title}
                   </p>
-                  <p
-                    className={`font-mulish ${
-                      index === 0 ? "block" : "hidden"
-                    }`}
-                  >
-                    {desc}
-                  </p>
+                  <p className="hidden font-mulish">{desc}</p>
                 </div>
               </div>
             </div>
