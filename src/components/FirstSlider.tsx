@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { ReactComponent as Arrow } from "../assets/arrow.svg";
 import itImg from "../assets/it.png";
 import maintImg from "../assets/maint.png";
 import healthImg from "../assets/health.png";
@@ -9,7 +8,7 @@ import healthImg from "../assets/health.png";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 2,
+    items: 3,
     partialVisibilityGutter: 0,
   },
   tablet: {
@@ -29,90 +28,65 @@ const FirstSlider = () => {
     {
       title: "IT Services",
       img: itImg,
-      smImg: maintImg,
       desc: "For software, web development, networking, programming, etc.",
     },
     {
       title: "Maintenance",
-      img: itImg,
-      smImg: maintImg,
+      img: maintImg,
       desc: "For software, web development, networking, programming, etc.",
     },
     {
       title: "Beauty & Health",
-      img: itImg,
-      smImg: healthImg,
+      img: healthImg,
       desc: "For software, web development, networking, programming, etc.",
     },
     {
       title: "IT Services",
       img: itImg,
-      smImg: maintImg,
       desc: "For software, web development, networking, programming, etc.",
     },
     {
       title: "Maintenance",
-      img: itImg,
-      smImg: maintImg,
+      img: maintImg,
       desc: "For software, web development, networking, programming, etc.",
     },
     {
       title: "Beauty & Health",
-      img: itImg,
-      smImg: healthImg,
+      img: healthImg,
       desc: "For software, web development, networking, programming, etc.",
     },
   ];
 
   useEffect(() => {
-    window.addEventListener("load", createObserver);
-    return () => {
-      window.removeEventListener("load", createObserver);
-    };
-  }, []);
-
-  const createObserver = () => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const img = entry.target.querySelector("img");
-          const firstParagraph =
-            entry.target.querySelector(".font-bai-jamjuree");
-          const secondParagraph = entry.target.querySelector(".font-mulish");
-          if (entry.isIntersecting) {
-            console.log("TEST");
-            img?.setAttribute("src", img?.getAttribute("data-image") || "");
-            firstParagraph?.classList.remove("rotate-180");
-            firstParagraph?.classList.remove("[writing-mode:vertical-lr]");
-            secondParagraph?.classList.remove("hidden");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        rootMargin: "0px 0px 100px 0px",
-        threshold: 1.0,
-      }
-    );
     const imagesContainer = document.querySelectorAll(".carouselItem");
     imagesContainer.forEach((container) => {
-      observer.observe(container);
+      container.addEventListener("click", (e) => {
+        console.log(e.currentTarget);
+        // const target = e.currentTarget as HTMLDivElement;
+        // if (target === container) {
+        //   const img = target?.querySelector("img");
+        //   img?.getAttribute("data-image") === img?.getAttribute("src")
+        //     ? img?.setAttribute("src", img?.getAttribute("data-sm-image") || "")
+        //     : img?.setAttribute("src", img?.getAttribute("data-image") || "");
+        // }
+      });
     });
-  };
+
+    return () => {};
+  }, []);
 
   return (
-    <section className="mt-36 grid items-center gap-12 pb-20 md:grid-cols-5 md:pl-16">
+    <section className="mt-44 grid items-center gap-12 pb-20 md:grid-cols-5 md:pl-20">
       <div className="relative col-span-2 w-screen px-8 md:w-auto md:px-0">
-        <Arrow className="absolute -top-40 right-20 w-28 md:-top-[95%] md:w-auto" />
         <div className="text-text md:pr-14">
-          <h2 className="font-bai-jamjuree text-2xl font-medium md:text-4xl">
+          <h2 className="font-bai-jamjuree text-2xl font-medium md:text-5xl">
             Explore by Categories
           </h2>
-          <p className="my-4 text-base font-medium md:mr-14">
+          <p className="my-4 text-base font-medium md:mr-14 md:text-lg">
             Browse our categories and find the right talents that matches the
             job you want to get done.
           </p>
-          <button className="rounded-20 bg-primary px-7 py-3.5 font-poppins text-sm font-medium text-white md:py-4 md:text-base">
+          <button className="rounded-20 bg-primary px-7 py-3.5 font-poppins text-sm font-medium text-white md:py-5 md:px-9 md:text-base">
             See all Categories
           </button>
         </div>
@@ -123,19 +97,21 @@ const FirstSlider = () => {
           showDots={true}
           partialVisible={true}
           responsive={responsive}
-          keyBoardControl={true}
+          // keyBoardControl={true}
+          // autoPlay={true}
+          // autoPlaySpeed={3000}
+          // infinite={true}
           containerClass="pb-8"
           removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
           // TODO: Move the dots to the center
           dotListClass="custom-dot-list-style --first-slider"
           itemClass="px-4"
         >
-          {services.map(({ title, desc, img, smImg }, index) => (
+          {services.map(({ title, desc, img }, index) => (
             <div className="flex justify-start" key={index}>
-              <div className="carouselItem relative w-[300px] transition-all">
+              <button type='button' className="carouselItem bg-red-400 z-10 relative w-[300px] transition-all">
                 <img
-                  data-image={img}
-                  src={smImg}
+                  src={img}
                   className="h-72"
                   alt={title}
                 />
@@ -146,7 +122,7 @@ const FirstSlider = () => {
                   </p>
                   <p className="hidden font-mulish">{desc}</p>
                 </div>
-              </div>
+              </button>
             </div>
           ))}
         </Carousel>

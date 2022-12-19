@@ -1,5 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import imgGroup from "../assets/img-group.png";
 
 import { ReactComponent as Clock } from "../assets/clock.svg";
 import { ReactComponent as Star } from "../assets/star.svg";
@@ -8,8 +9,6 @@ import { ReactComponent as Right } from "../assets/right.svg";
 import slide1 from "../assets/mec.png";
 import slide2 from "../assets/slide2.png";
 import slide3 from "../assets/slide3.png";
-import half1 from "../assets/half1.png";
-import half2 from "../assets/half2.png";
 import slide1Small from "../assets/round1.png";
 import slide2Small from "../assets/round2.png";
 import slide3Small from "../assets/round3.png";
@@ -37,7 +36,7 @@ const SecondSlider = () => {
     <>
       <section className="relative overflow-x-clip bg-light-red pb-10 pt-14">
         <div className="absolute -top-16 left-1/2 h-24 w-[110%] -translate-x-1/2 rounded-bl-[50%] rounded-br-[50%] bg-main-bg md:rounded-br-[100%] md:rounded-bl-[100%]"></div>
-        <h3 className="mt-6 mb-10 text-center font-bai-jamjuree text-xl font-semibold text-text md:text-2xl">
+        <h3 className="mt-6 mb-10 text-center font-bai-jamjuree text-xl font-semibold text-text md:mb-12 md:text-3xl">
           See what
           <span className="text-primary"> people </span>
           are getting done
@@ -53,7 +52,7 @@ const SecondSlider = () => {
           containerClass="pb-10 md:pb-12"
           removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
           dotListClass="custom-dot-list-style"
-          itemClass="px-8 md:px-4 md:first:ml-16"
+          itemClass="px-8 md:px-4 md:first:ml-20"
         >
           {sliderDetails.map(
             (
@@ -62,7 +61,7 @@ const SecondSlider = () => {
             ) => (
               <div
                 key={index}
-                className="relative h-[350px] rounded-25 bg-cover bg-center bg-no-repeat md:h-[370px]"
+                className="relative h-[350px] rounded-25 bg-cover bg-center bg-no-repeat md:h-[330px]"
                 style={{ backgroundImage: `url(${img})` }}
               >
                 <span
@@ -118,15 +117,15 @@ const SecondSlider = () => {
           )}
         </Carousel>
 
-        <button className="mx-auto mt-6 block w-52 rounded-20 bg-primary py-3.5 font-poppins text-sm font-medium text-white md:mb-28 md:mt-10 md:py-4 md:text-base">
+        <button className="mx-auto mt-6 block w-52 rounded-20 bg-primary py-3.5 font-poppins text-sm font-medium text-white md:mb-28 md:mt-10 md:w-64 md:py-5 md:text-base">
           Post your own task
         </button>
       </section>
 
       <section className="mb-[800px] grid gap-16 md:mb-52 md:grid-cols-2 md:gap-10">
-        <div className="rounded-br-128 bg-light-red pb-36 pt-10 pl-8 md:-mr-40 md:pt-20 md:pb-64 md:pr-56 md:pl-16">
+        <div className="rounded-br-128 bg-light-red pb-36 pt-10 pl-8 md:-mr-40 md:pt-20 md:pb-0 md:pr-56 md:pl-20">
           <div className="pr-8 text-text md:pr-10">
-            <h2 className="font-bai-jamjuree text-2xl font-medium md:text-4xl">
+            <h2 className="font-bai-jamjuree text-2xl font-medium md:text-5xl">
               Become a Service Provider and start
               <span className="text-primary"> earning </span>
               today!
@@ -136,20 +135,13 @@ const SecondSlider = () => {
               convallis fusce nulla tincidunt sem iaculis. Amet velit etiam
               nisi.
             </p>
-            <button className="rounded-16 bg-primary py-2.5 px-8 font-poppins text-base font-medium text-white md:rounded-20 md:py-3.5 md:px-7">
+            <button className="rounded-16 bg-primary py-2.5 px-8 font-poppins text-base font-medium text-white md:rounded-20 md:py-4 md:px-12">
               Start Earning
             </button>
           </div>
         </div>
-
-        <div className="relative">
-          <img src={slide2} alt="slide2" className="absolute md:-top-20" />
-          <img src={half1} alt="half1" className="absolute right-0 top-60" />
-          <img
-            src={half2}
-            alt="half2"
-            className="absolute right-0 md:-top-10"
-          />
+        <div>
+          <img src={imgGroup} alt="imgGroup" className="relative max-h-full -top-10" />
         </div>
       </section>
     </>

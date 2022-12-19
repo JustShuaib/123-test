@@ -5,7 +5,7 @@ import NavLinks from "./NavLinks";
 const Btn = () => (
   <button
     type="button"
-    className="rounded-16 border border-primary py-2.5 px-7 font-bai-jamjuree font-medium text-primary md:border-2 md:px-5"
+    className="rounded-16 border border-primary py-2.5 px-7 font-bai-jamjuree font-medium text-primary md:border-2 md:px-6 md:py-3 md:text-base"
   >
     Post a job
   </button>
@@ -56,7 +56,7 @@ const Nav = () => {
         </div>
       </nav>
 
-      <nav className="hidden items-center justify-between py-6 px-8 md:flex md:px-16">
+      <nav className="hidden items-center justify-between py-6 px-8 md:flex md:px-20">
         <div className="flex items-center gap-8">
           <Logo />
           <Btn />

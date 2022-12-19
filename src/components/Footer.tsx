@@ -1,7 +1,7 @@
 import { ReactComponent as Logo } from "../assets/logo-white.svg";
 const Footer = () => {
   return (
-    <footer className="relative overflow-x-clip bg-primary px-6 text-white md:px-16">
+    <footer className="relative overflow-x-clip bg-primary px-6 text-white md:px-20">
       <div className="absolute left-1/2 -top-24 -z-10 h-44 w-[120%] -translate-x-1/2 rounded-tl-[50%] rounded-tr-[50%] bg-primary md:rounded-tr-[100%] md:rounded-tl-[100%]"></div>
 
       <div className="mx-auto flex flex-col items-center md:w-1/2 md:justify-center md:px-4">

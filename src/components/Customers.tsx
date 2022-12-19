@@ -62,8 +62,8 @@ const reviews = [
 ];
 const Customers = () => {
   return (
-    <section className="mb-20 px-8 md:px-16">
-      <h3 className="mt-6 mb-10 text-center font-bai-jamjuree text-2xl font-semibold text-text">
+    <section className="mb-20 px-8 md:px-20">
+      <h3 className="mt-6 mb-10 text-center font-bai-jamjuree md:text-3xl text-2xl font-semibold text-text">
         Our Customers love what we do.
       </h3>
       <div className="relative grid items-start gap-8 overflow-y-clip md:grid-cols-3">

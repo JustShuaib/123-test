@@ -19,7 +19,7 @@ const NavLinks = () => {
         <li>
           <a href="#">Sign Up</a>
         </li>
-        <li className="rounded-16 bg-primary py-3 px-5 font-medium text-white">
+        <li className="rounded-16 bg-primary py-4 px-7 text-base font-medium text-white">
           <a href="#">Provide a Service</a>
         </li>
       </ul>
