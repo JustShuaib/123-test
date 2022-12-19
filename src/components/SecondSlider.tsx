@@ -17,7 +17,7 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 3,
-    partialVisibilityGutter: 50,
+    partialVisibilityGutter: 60,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -36,7 +36,7 @@ const SecondSlider = () => {
     <>
       <section className="relative overflow-x-clip bg-light-red pb-10 pt-14">
         <div className="absolute -top-16 left-1/2 h-24 w-[110%] -translate-x-1/2 rounded-bl-[50%] rounded-br-[50%] bg-main-bg md:rounded-br-[100%] md:rounded-bl-[100%]"></div>
-        <h3 className="mt-6 mb-10 text-center font-bai-jamjuree text-xl font-semibold text-text md:mb-12 md:text-3xl">
+        <h3 className="mt-6 mb-10 text-center font-bai-jamjuree text-xl font-semibold text-text md:mb-12 md:text-4xl">
           See what
           <span className="text-primary"> people </span>
           are getting done
@@ -52,7 +52,7 @@ const SecondSlider = () => {
           containerClass="pb-10 md:pb-12"
           removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
           dotListClass="custom-dot-list-style"
-          itemClass="px-8 md:px-4 md:first:ml-20"
+          itemClass="px-8 md:px-4 md:first:ml-24"
         >
           {sliderDetails.map(
             (
@@ -117,31 +117,35 @@ const SecondSlider = () => {
           )}
         </Carousel>
 
-        <button className="mx-auto mt-6 block w-52 rounded-20 bg-primary py-3.5 font-poppins text-sm font-medium text-white md:mb-28 md:mt-10 md:w-64 md:py-5 md:text-base">
+        <button className="mx-auto mt-6 block w-52 rounded-20 bg-primary py-3.5 font-poppins text-sm font-medium text-white md:mb-28 md:mt-10 md:w-64 md:py-5 md:text-lg">
           Post your own task
         </button>
       </section>
 
       <section className="mb-[800px] grid gap-16 md:mb-52 md:grid-cols-2 md:gap-10">
-        <div className="rounded-br-128 bg-light-red pb-36 pt-10 pl-8 md:-mr-40 md:pt-20 md:pb-0 md:pr-56 md:pl-20">
+        <div className="rounded-br-128 bg-light-red pb-36 pt-10 pl-8 md:-mr-40 md:h-[85%] md:pt-20 md:pb-0 md:pr-56 md:pl-28">
           <div className="pr-8 text-text md:pr-10">
             <h2 className="font-bai-jamjuree text-2xl font-medium md:text-5xl">
               Become a Service Provider and start
               <span className="text-primary"> earning </span>
               today!
             </h2>
-            <p className="my-4 text-sm font-medium md:my-6 md:text-base">
+            <p className="my-4 text-sm font-medium md:my-6 md:text-lg">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui
               convallis fusce nulla tincidunt sem iaculis. Amet velit etiam
               nisi.
             </p>
-            <button className="rounded-16 bg-primary py-2.5 px-8 font-poppins text-base font-medium text-white md:rounded-20 md:py-4 md:px-12">
+            <button className="rounded-16 bg-primary py-2.5 px-8 font-poppins text-base font-medium text-white md:rounded-20 md:py-4 md:px-12 md:text-lg">
               Start Earning
             </button>
           </div>
         </div>
-        <div>
-          <img src={imgGroup} alt="imgGroup" className="relative max-h-full -top-10" />
+        <div className="">
+          <img
+            src={imgGroup}
+            alt="imgGroup"
+            className="relative -top-10 max-h-full"
+          />
         </div>
       </section>
     </>

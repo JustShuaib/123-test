@@ -63,7 +63,7 @@ const reviews = [
 const Customers = () => {
   return (
     <section className="mb-20 px-8 md:px-20">
-      <h3 className="mt-6 mb-10 text-center font-bai-jamjuree md:text-3xl text-2xl font-semibold text-text">
+      <h3 className="mt-6 mb-10 text-center font-bai-jamjuree text-2xl font-semibold text-text md:text-4xl">
         Our Customers love what we do.
       </h3>
       <div className="relative grid items-start gap-8 overflow-y-clip md:grid-cols-3">
@@ -128,7 +128,7 @@ const Customers = () => {
             </div>
           ))}
         </div>
-        <div className="absolute -bottom-20 z-10 h-56 w-full md:rounded-br-128 bg-gradient-to-t from-main-bg to-transparent md:bottom-10"></div>
+        <div className="absolute -bottom-20 z-10 h-56 w-full bg-gradient-to-t from-main-bg to-transparent md:bottom-10 md:rounded-br-128"></div>
       </div>
     </section>
   );

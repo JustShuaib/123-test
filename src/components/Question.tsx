@@ -3,7 +3,7 @@ const Question = () => {
   return (
     <div className="mb-[600px] grid md:mb-64 md:grid-cols-2 md:gap-32 md:pl-20">
       <section>
-        <h3 className="mt-6 mb-10 text-center font-bai-jamjuree text-2xl font-semibold text-text md:text-left md:text-3xl">
+        <h3 className="mt-6 mb-10 text-center font-bai-jamjuree text-2xl font-semibold text-text md:text-left md:text-4xl">
           Have a question? <br /> We are ready to assist
         </h3>
         <form className="flex flex-col items-start gap-y-4 px-8 md:w-10/12 md:gap-y-8 md:px-0">
